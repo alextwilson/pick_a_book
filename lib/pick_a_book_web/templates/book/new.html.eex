@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "PickABook" %></h2>
+  <p class="lead">A website where you can exchange books</p>
+</div>
+
+<div class="book_form">
+  <form class="book" action="index.html" method="post">
+    Title: <input type="text" name="title"><br>
+    Author: <input type="text" name="author"><br>
+    Genre: <input type="text" name="genre"><br>
+    Description: <input type="textarea" name="description"><br>
+    <input type="submit" value="Add Book">
+  </form>
+</div>
