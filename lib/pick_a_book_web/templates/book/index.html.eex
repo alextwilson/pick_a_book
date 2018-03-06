@@ -1,0 +1,32 @@
+<h2>Listing Books</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for book <- @books do %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.author %></td>
+      <td><%= book.genre %></td>
+      <td><%= book.description %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: book_path(@conn, :show, book), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: book_path(@conn, :edit, book), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: book_path(@conn, :delete, book), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Book", to: book_path(@conn, :new) %></span>
