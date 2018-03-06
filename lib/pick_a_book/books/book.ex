@@ -1,4 +1,4 @@
-defmodule PickABook.Book do
+defmodule PickABook.Books.Book do
   use Ecto.Schema
   import Ecto.Changeset
 

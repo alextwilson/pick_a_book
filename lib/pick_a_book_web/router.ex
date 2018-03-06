@@ -17,8 +17,14 @@ defmodule PickABookWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/books/new", BookController, :new
+    resources "/books", BookController
   end
+
+  # scope "/books", BookController do
+  #   pipe_through :browser
+  #
+  #   resources "/", BookController
+  # end
 
   # Other scopes may use custom stacks.
   # scope "/api", PickABookWeb do

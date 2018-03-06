@@ -1,3 +1,3 @@
 defmodule PickABookWeb.BookView do
-  use PickABookWeb, :view 
+  use PickABookWeb, :view
 end
