@@ -10,7 +10,7 @@ class HelloReact extends React.Component {
       <div>
         <Route exact path="/" component={Home}/>
         <Route path="/login" component={Login}/>
-        <Route path="/new" component={NewBook}/>
+        <Route path="/books/new" component={NewBook}/>
       </div>
     </Router>
   )
@@ -23,7 +23,7 @@ class Home extends React.Component {
       <div>
         <h1>Hello React!</h1>
         <Link to="/login">Login</Link>
-        <Link to="/new">New</Link>
+        <Link to="/books/new">New</Link>
       </div>
     )
   }
@@ -44,6 +44,7 @@ class NewBook extends React.Component {
     return (
       <div>
         <h1>New Book Page</h1>
+        
         <Link to="/">Home</Link>
       </div>
     )
