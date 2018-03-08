@@ -9,6 +9,7 @@
 
     <title>Hello PickABook!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <%= link "Register", to: user_path(@conn, :new) %>
   </head>
 
   <body>
@@ -31,5 +32,6 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
   </body>
 </html>
