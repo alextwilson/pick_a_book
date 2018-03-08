@@ -1,31 +1,56 @@
 import "phoenix_html"
 import React from "react"
 import ReactDOM from "react-dom"
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
 class HelloReact extends React.Component {
   render() {
-    return (<h1>Hello React!</h1>)
+    return (
+      <Router>
+      <div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/new" component={NewBook}/>
+      </div>
+    </Router>
+  )
   }
 }
-ReactDOM.render(
-  <HelloReact/>,
-  document.getElementById("hello-react")
-)
 
-class NewBookForm extends React.Component {
+class Home extends React.Component {
   render() {
     return (
-      <form>
-        <label>Title: <input type="text" title="title" /></label><br></br>
-        <label> Author: <input type="text" author="author" /></label><br></br>
-        <label> Genre: <input type="text" genre="genre" /></label><br></br>
-        <label> Description: <input type="text" description="description" /></label>
-        <input type="submit" value="Submit" />
-      </form>
-      )
+      <div>
+        <h1>Hello React!</h1>
+        <Link to="/login">Login</Link>
+        <Link to="/new">New</Link>
+      </div>
+    )
+  }
+}
+class Login extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello Boring Login Page!</h1>
+        <Link to="/">Home</Link>
+      </div>
+    )
   }
 }
 
-ReactDOM.render(
-  <NewBookForm />,
-  document.getElementById("book-form")
+class NewBook extends React.Component {
+  render(){
+    return (
+      <div>
+        <h1>New Book Page</h1>
+        <Link to="/">Home</Link>
+      </div>
+    )
+  }
+}
+
+
+
+ReactDOM.render(<HelloReact />, document.getElementById("hello-react")
 )
