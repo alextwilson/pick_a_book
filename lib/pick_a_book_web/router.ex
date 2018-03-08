@@ -18,6 +18,6 @@ defmodule PickABookWeb.Router do
 
     get "/", PageController, :index
     resources "/books", BookController
-    resources "/registrations", UserController, only: [:new, :create]
+    resources "/registrations", UserController
   end
 end
