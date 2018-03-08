@@ -11,9 +11,9 @@ defmodule PickABookWeb.UserController do
 
   def create(conn, %{"user" => user_params}) do
     case Accounts.create_user(user_params) do
-      {:ok} ->
+      {:ok, user} ->
         conn
-        |> put_flash(:info, "You have successfully logged in.")
+        |> put_flash(:info, "Registration Successful.")
         |> redirect(to: "/")
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
