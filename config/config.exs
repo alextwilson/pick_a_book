@@ -5,6 +5,10 @@
 # is restricted to this project.
 use Mix.Config
 
+config :pick_a_book, PickABook.Accounts.Guardian,
+  issuer: "pick_a_book", # Name of your app/company/product
+  secret_key: "WsYUWJ58qoCjSZ3bKWSmhhcl62f2n9TdHaQrgwTCMuEi6FZaiYgfsyuqGrCT1ShW" # Replace this with the output of the mix command
+
 # General application configuration
 config :pick_a_book,
   ecto_repos: [PickABook.Repo]
